@@ -219,10 +219,3 @@ footer {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
 }
-.footer-social-text {
-    display: flex;         /* Forces the children (A and SPAN) onto one line */
-    align-items: center;   /* Centers them vertically so the text isn't "higher" than the icon */
-    justify-content: center; /* Centers the whole group in the footer */
-    gap: 8px;              /* Adds a clean space between the icon and the text */
-    margin: 0;             /* Removes default paragraph margin */
-}
