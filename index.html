@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyPrints | Launching Soon at SITRC</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav>
+        <div class="logo">
+            <img src="logo.png" alt="MyPrints Logo" class="logo-img">
+            My<span>Prints</span>
+        </div>
+        <div class="status-badge">Pilot Launching Soon</div>
+    </nav>
+
+    <main class="hero">
+        <h1>The 30-minute print queue is <span class="highlight">officially dead.</span></h1>
+        
+        <p class="subtitle">
+            We are bringing instant, cloud-to-hardware printing to SITRC. Upload securely from your phone, pay instantly, and collect without the wait. No pen drives. No WhatsApp forwards.
+        </p>
+
+        <form class="notify-form" onsubmit="event.preventDefault(); submitForm();">
+            <input type="email" name="email" class="notify-input" placeholder="Enter your college email..." required id="emailInput">
+            <button type="submit" class="notify-btn" id="submitBtn">Get Early Access</button>
+        </form>
+
+        <div class="features">
+            <div class="feature-card">
+                <div class="feature-icon">🔒</div>
+                <h3 class="feature-title">Secure PDF Workloads</h3>
+                <p class="feature-desc">Your documents are processed securely. Strict PDF-only formatting guarantees zero layout errors on paper.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">⚡</div>
+                <h3 class="feature-title">Hardware Routing</h3>
+                <p class="feature-desc">Our system bypasses browser limits, sending your files directly to the local shop's OS print spooler.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">💳</div>
+                <h3 class="feature-title">Frictionless UPI</h3>
+                <p class="feature-desc">Integrated securely with Razorpay. Pre-pay for your prints instantly so you can just walk in and pick them up.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        &copy; 2026 MyPrints. Built for the students of SITRC.
+    </footer>
+
+    <script>
+        // Simple JS to give visual feedback when someone joins the waitlist
+        function submitForm() {
+            const btn = document.getElementById('submitBtn');
+            const input = document.getElementById('emailInput');
+            
+            btn.textContent = 'Added to Waitlist! 🚀';
+            btn.style.background = '#22c55e'; // Green success color
+            btn.style.color = '#fff';
+            input.value = '';
+            
+            setTimeout(() => {
+                btn.textContent = 'Get Early Access';
+                btn.style.background = 'var(--primary-color)';
+                btn.style.color = '#0f172a';
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
