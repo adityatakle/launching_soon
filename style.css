@@ -170,32 +170,48 @@ h1 .highlight {
 /* Footer & Socials */
 footer {
     text-align: center;
-    padding: 32px 24px;
+    padding: 32px 24px 24px;
     color: var(--text-muted);
-    font-size: 0.85rem;
+    font-size: 0.8rem; /* Slightly smaller text for cleaner look */
     border-top: 1px solid var(--border-color);
     margin-top: auto;
 }
 
 .social-links {
-    margin-bottom: 16px;
-}
-
-.social-icon {
-    color: var(--text-muted);
-    transition: all 0.3s ease;
-    display: inline-block;
-}
-
-.social-icon:hover {
-    color: var(--primary-color);
-    transform: translateY(-2px);
+    margin-bottom: 12px; /* Pulls social icon closer to the text */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .social-icon svg {
-    width: 28px;
-    height: 28px;
-    fill: currentColor;
+    /* Fixed small size for the logo */
+    width: 22px; 
+    height: 22px;
+    display: block;
+    fill: #94a3b8; /* Starts muted */
+    transition: transform 0.3s ease;
+}
+
+/* Apply actual Instagram gradient on hover */
+.social-icon.insta-gradient:hover svg {
+    transform: translateY(-2px);
+    /* Standard Instagram color gradient */
+    fill: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    
+    /* Cross-browser gradient text effect applied to the icon fill */
+    filter: drop-shadow(0 0 8px rgba(220, 39, 67, 0.4));
+}
+
+/* Required trick to make the gradient work on the SVG fill */
+@supports (-webkit-background-clip: text) {
+    .social-icon.insta-gradient:hover svg {
+        background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent; /* Makes raw color invisible so gradient shows */
+        fill: transparent; /* Makes raw fill invisible so gradient shows */
+    }
 }
 
 /* Animations */
